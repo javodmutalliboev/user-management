@@ -114,7 +114,7 @@ class UserManagementApp(QWidget):
         name = self.table.item(row, 0).text()
         email = self.table.item(row, 1).text()
 
-        cursor.execute("SELECT id from users WHERE name=%s and email=%s", (name, email))
+        cursor.execute("SELECT id from users WHERE name=%s AND email=%s", (name, email))
         return cursor.fetchone()[0]
 
     def add_user(self):
